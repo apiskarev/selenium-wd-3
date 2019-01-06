@@ -1,11 +1,18 @@
-import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+package tests.lesson4;
 
-public class ThirdTest extends AdminPage {
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import tests.AdminPage;
+
+public class CheckAllMenuItems extends AdminPage {
 
         @Test
-        public void third(){
-            login();
+        public void adminMenuTest(){
+            loginAsAdmin();
+
+            By mainElements = By.cssSelector("ul#box-apps-menu > li");
+            By subElements = By.cssSelector("ul#box-apps-menu ul.docs a");
 
             for (int i = 0; i < driver.findElements(mainElements).size(); i++){
                 driver.findElements(mainElements).get(i).click();
@@ -20,6 +27,7 @@ public class ThirdTest extends AdminPage {
         }
 
         private void assertHeaderPresent(){
+            By header = By.cssSelector("#content > h1");
             wait.until(ExpectedConditions.visibilityOf(driver.findElement(header)));
             assert driver.findElement(header).getText().length() > 0;
         }
