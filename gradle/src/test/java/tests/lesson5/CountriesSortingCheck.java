@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CountriesAndGeoZonesSortingCheck extends AdminPage {
+public class CountriesSortingCheck extends AdminPage {
 
     @Test
-    public void fifth(){
+    public void first(){
         loginAsAdminAndOpen("http://localhost/litecart/admin/?app=countries&doc=countries");
 
         List<String> countries = new ArrayList<>();
