@@ -9,7 +9,7 @@ public class AdminPage extends BaseTest {
         driver.get("http://localhost/litecart/admin/login.php");
         driver.findElement(By.cssSelector("input[name='username']")).sendKeys("admin");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("admin");
-        driver.findElement(By.cssSelector("button[name='loginAsAdminAndOpen']")).click();
+        driver.findElement(By.cssSelector("button[name='login']")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.notice.success")));
     }
 
