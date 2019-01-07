@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CountriesSortingCheck extends AdminPage {
+public class Task9_1 extends AdminPage {
 
     @Test
-    public void first(){
+    public void task9_1(){
         loginAsAdminAndOpen("http://localhost/litecart/admin/?app=countries&doc=countries");
 
         List<String> countries = new ArrayList<>();
@@ -23,7 +23,7 @@ public class CountriesSortingCheck extends AdminPage {
 
         for (int i = 0; i < elements(rows).size(); i++){
                countries.add(element(By.xpath("(//tr[@class='row'][" + (i + 1) + "])/td[5]")).getText());
-            if (Integer.parseInt(element(By.xpath("(//tr[@class='row']["+ (i+1) +"])/td[6]")).getText()) > 0) {
+            if (Integer.parseInt(element(By.xpath("(//tr[@class='row']["+ (i + 1) +"])/td[6]")).getText()) > 0) {
                 rowsOfCountriesWithZones.add(i + 1);
             }
         }
@@ -31,21 +31,25 @@ public class CountriesSortingCheck extends AdminPage {
         Collections.sort(countries);
 
         for (int i = 0; i < elements(By.cssSelector(".row")).size(); i++){
-            Assert.assertEquals(countries.get(i), element(By.xpath("(//tr[@class='row']["+ (i+1) +"])/td[5]")).getText());
+            Assert.assertEquals(countries.get(i),
+                    element(By.xpath("(//tr[@class='row'][" + (i + 1) + "])/td[5]")).getText());
         }
 
         for (int i = 0; i < rowsOfCountriesWithZones.size(); i++){
             element(By.xpath("(//tr[@class='row'][" + rowsOfCountriesWithZones.get(i) + "])/td[5]/a")).click();
             List<String> zonesList = new ArrayList<>();
             for (int j = 0; j < elements(zoneRows).size(); j++){
-                zonesList.add(element(By.xpath("(//table[@id='table-zones']//tr[not(contains(@class, 'header'))]["+ (j+1) +"])/td[3]")).getText());
+                zonesList.add(
+                        element(By.xpath("(//table[@id='table-zones']//tr[not(contains(@class, 'header'))][" +
+                                (j + 1) + "])/td[3]")).getText());
             }
 
             Collections.sort(zonesList);
 
             for (int j = 0; j < zonesList.size(); j++){
                 Assert.assertEquals(zonesList.get(j),
-                        element(By.xpath("(//table[@id='table-zones']//tr[not(contains(@class, 'header'))]["+ (j+1) +"])/td[3]")).getText());
+                        element(By.xpath("(//table[@id='table-zones']//tr[not(contains(@class, 'header'))][" +
+                                (j + 1) + "])/td[3]")).getText());
             }
             driver.navigate().back();
         }
