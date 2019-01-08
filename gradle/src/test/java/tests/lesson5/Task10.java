@@ -64,9 +64,10 @@ public class Task10 extends BaseTest {
             case GREY:
                 for (int i = 1; i < 3; i++)
                     Assert.assertEquals(colors[0],colors[i]);
+                break;
             case RED:
                 assert Integer.parseInt(colors[0]) > 0;
-                assert Integer.parseInt(colors[1]) == Integer.parseInt(colors[2]);
+                assert (Integer.parseInt(colors[1]) == Integer.parseInt(colors[2])) & Integer.parseInt(colors[1]) == 0;
         }
     }
 
