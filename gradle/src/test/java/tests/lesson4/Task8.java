@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import tests.BaseTest;
 
-public class CheckProductStickers extends BaseTest {
+public class Task8 extends BaseTest {
 
     @Test
     public void mainpageProductsTest(){

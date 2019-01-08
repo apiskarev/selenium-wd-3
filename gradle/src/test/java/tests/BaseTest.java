@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -38,6 +39,11 @@ public class BaseTest {
         driver = getDriver(CHROME);
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
+    }
+
+    protected void openLiteCart(){
+        driver.get("http://localhost/litecart/en/");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li.product")));
     }
 
     protected boolean areElementsPresent(By by){

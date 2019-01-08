@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import tests.AdminPage;
 
-public class CheckAllMenuItems extends AdminPage {
+public class Task7 extends AdminPage {
 
         @Test
         public void adminMenuTest(){

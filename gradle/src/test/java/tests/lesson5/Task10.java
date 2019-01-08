@@ -10,8 +10,7 @@ public class Task10 extends BaseTest {
 
     @Test
     public void task10(){
-        driver.get("http://localhost/litecart/en/");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li.product")));
+        openLiteCart();
 
         By nameAtMainPage = By.cssSelector("div#box-campaigns div.name");
         By regularPriceAtMainPage = By.cssSelector("div#box-campaigns s");
