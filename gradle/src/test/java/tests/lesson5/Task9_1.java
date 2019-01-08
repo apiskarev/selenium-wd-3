@@ -18,19 +18,19 @@ public class Task9_1 extends AdminPage {
         List<String> countries = new ArrayList<>();
         List<Integer> rowsOfCountriesWithZones = new ArrayList<>();
 
-        By rows = By.xpath("(//tr[@class='row'])");
+        By rows = By.cssSelector("tr.row");
         By zoneRows = By.xpath("//input[contains(@name, 'zones')]/..//../td/..");
 
         for (int i = 0; i < elements(rows).size(); i++){
                countries.add(element(By.xpath("(//tr[@class='row'][" + (i + 1) + "])/td[5]")).getText());
-            if (Integer.parseInt(element(By.xpath("(//tr[@class='row']["+ (i + 1) +"])/td[6]")).getText()) > 0) {
+            if (Integer.parseInt(element(By.xpath("(//tr[@class='row'][" + (i + 1) + "])/td[6]")).getText()) > 0) {
                 rowsOfCountriesWithZones.add(i + 1);
             }
         }
 
         Collections.sort(countries);
 
-        for (int i = 0; i < elements(By.cssSelector(".row")).size(); i++){
+        for (int i = 0; i < elements(rows).size(); i++){
             Assert.assertEquals(countries.get(i),
                     element(By.xpath("(//tr[@class='row'][" + (i + 1) + "])/td[5]")).getText());
         }

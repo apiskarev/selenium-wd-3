@@ -83,7 +83,4 @@ public class Task10 extends BaseTest {
         return Float.parseFloat(element(by).getCssValue("font-size").replace("px", ""));
     }
 
-
-
-
 }
