@@ -8,7 +8,7 @@ public class Task8 extends BaseTest {
 
     @Test
     public void mainpageProductsTest(){
-        driver.get("http://localhost/litecart/en/");
+        openLiteCart();
 
         By products = By.cssSelector("li.product");
 
