@@ -37,7 +37,7 @@ public class Account {
     private int generateRandomNumericValue(int length){
         StringBuilder s = new StringBuilder();
         for (int b = 0; b < length; b++)
-            s.append(String.valueOf(getRandomNumber(0, 9)));
+            s.append(getRandomNumber(0, 9));
         return Integer.parseInt(String.valueOf(s));
     }
 
@@ -64,15 +64,15 @@ public class Account {
         taxId = generateRandomNumericValue(9);
     }
 
-    final int getTaxId() {
-        return taxId;
+    public String getTaxId() {
+        return String.valueOf(taxId);
     }
 
     private void generateCompanyName(){
         companyName = generateRandomText(getRandomNumber(3, 10)) + " limited";
     }
 
-    String getCompanyName() {
+    public String getCompanyName() {
         return companyName;
     }
 
@@ -81,7 +81,7 @@ public class Account {
         firstName = names[getRandomNumber(0, names.length - 1)];
     }
 
-    String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -90,7 +90,7 @@ public class Account {
         lastName = lastNames[getRandomNumber(0, lastNames.length - 1)];
     }
 
-    String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -102,7 +102,7 @@ public class Account {
         firstAddress = generateRandomStreet();
     }
 
-    String getFirstAddress() {
+    public String getFirstAddress() {
         return firstAddress;
     }
 
@@ -110,7 +110,7 @@ public class Account {
         secondAddress = generateRandomStreet();
     }
 
-    String getSecondAddress() {
+    public String getSecondAddress() {
         return secondAddress;
     }
 
@@ -118,8 +118,8 @@ public class Account {
         postCode = generateRandomNumericValue(5);
     }
 
-    int getPostCode() {
-        return postCode;
+    public String getPostCode() {
+        return String.valueOf(postCode);
     }
 
     private void generateCity(){
@@ -127,7 +127,7 @@ public class Account {
         city = cities[getRandomNumber(0, cities.length - 1)];
     }
 
-    String getCity() {
+    public String getCity() {
         return city;
     }
 
@@ -139,7 +139,7 @@ public class Account {
         email = (firstName + "." + lastName + generateRandomNumericValue(7) + "@" + companyName.split(" ")[0] + ".com").toLowerCase();
     }
 
-    String getEmail() {
+    public String getEmail() {
         return email;
     }
 
@@ -147,7 +147,7 @@ public class Account {
         phoneNumber = "+7 800 " + generateRandomNumericValue(9);
     }
 
-    String getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -155,7 +155,7 @@ public class Account {
         password = generateRandomText(10, true);
     }
 
-    String getPassword() {
+    public String getPassword() {
         return password;
     }
 }
