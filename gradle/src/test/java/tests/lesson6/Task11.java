@@ -2,15 +2,9 @@ package tests.lesson6;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import tests.BaseTest;
 import tests.pages.MainPage;
 import tests.pages.NewUserPage;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Task11 extends BaseTest {
 
@@ -23,7 +17,6 @@ public class Task11 extends BaseTest {
         account = new Account();
         mainPage = new MainPage(driver);
         userPage = new NewUserPage(driver);
-
     }
 
     @Test
@@ -36,15 +29,5 @@ public class Task11 extends BaseTest {
         mainPage.login(account);
         mainPage.logout();
     }
-
-
-
-
-
-
-
-
-
-
 
 }
