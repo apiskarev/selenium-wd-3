@@ -1,19 +1,28 @@
 package tests.lesson5;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import tests.AdminPage;
+import tests.BaseTest;
+import tests.pages.AdminPage;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Task9_1 extends AdminPage {
+public class Task9_1 extends BaseTest {
+
+    private AdminPage admin;
+
+    @Before
+    public void setUp(){
+        admin = new AdminPage(driver);
+    }
 
     @Test
     public void task9_1(){
-        loginAsAdminAndOpen("http://localhost/litecart/admin/?app=countries&doc=countries");
+        admin.loginAsAdminAndOpen("http://localhost/litecart/admin/?app=countries&doc=countries");
 
         List<String> countries = new ArrayList<>();
         List<Integer> rowsOfCountriesWithZones = new ArrayList<>();

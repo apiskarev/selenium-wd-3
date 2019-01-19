@@ -3,8 +3,9 @@ package tests.lesson6;
 import org.junit.Before;
 import org.junit.Test;
 import tests.BaseTest;
-import tests.pages.MainPage;
-import tests.pages.NewUserPage;
+import tests.pages.data.Account;
+import tests.pages.shopPages.MainPage;
+import tests.pages.shopPages.NewUserPage;
 
 public class Task11 extends BaseTest {
 

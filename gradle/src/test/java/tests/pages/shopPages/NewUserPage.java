@@ -1,10 +1,11 @@
-package tests.pages;
+package tests.pages.shopPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import tests.lesson6.Account;
+import tests.pages.AbstractPage;
+import tests.pages.data.Account;
 
 import java.util.concurrent.ThreadLocalRandom;
 

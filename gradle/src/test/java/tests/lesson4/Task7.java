@@ -3,7 +3,7 @@ package tests.lesson4;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import tests.AdminPage;
+import tests.pages.AdminPage;
 
 public class Task7 extends AdminPage {
 

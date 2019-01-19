@@ -10,11 +10,11 @@ import java.util.List;
 
 public class AbstractPage {
 
-    private WebDriver driver;
+    WebDriver driver;
 
-    WebDriverWait wait;
+    protected WebDriverWait wait;
 
-    AbstractPage(WebDriver driver){
+    protected AbstractPage(WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
@@ -23,7 +23,7 @@ public class AbstractPage {
         return driver.findElements(by).size() > 0;
     }
 
-    WebElement element(By by){
+    protected WebElement element(By by){
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return driver.findElement(by);
     }
