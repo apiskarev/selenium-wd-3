@@ -14,7 +14,7 @@ public class Account extends MainData{
     private String phoneNumber;
     private String password;
 
-    Account(){
+    public Account(){
         generateTaxId();
         generateCompanyName();
         generateFirstName();
@@ -37,7 +37,7 @@ public class Account extends MainData{
     }
 
     private void generateCompanyName(){
-        companyName = generateRandomText(getRandomNumber(3, 10)) + " limited";
+        companyName = generateRandomWord(getRandomNumber(3, 10)) + " limited";
     }
 
     public String getCompanyName() {
@@ -120,7 +120,7 @@ public class Account extends MainData{
     }
 
     private void generatePassword(){
-        password = generateRandomText(10, true);
+        password = generateRandomWord(10, true);
     }
 
     public String getPassword() {

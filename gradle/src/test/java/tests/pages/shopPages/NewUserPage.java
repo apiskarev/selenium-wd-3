@@ -26,10 +26,10 @@ public class NewUserPage extends AbstractPage {
         element(By.cssSelector("input[name='city']")).sendKeys(account.getCity());
         element(By.cssSelector("input[name='email']")).sendKeys(account.getEmail());
         element(By.cssSelector("input[name='phone']")).sendKeys(account.getPhoneNumber());
-        element(By.cssSelector("input[name='password']")).sendKeys(account.getPassword());
-        element(By.cssSelector("input[name='confirmed_password']")).sendKeys(account.getPassword());
+        //element(By.cssSelector("input[name='password']")).sendKeys(account.getPassword());
+        //element(By.cssSelector("input[name='confirmed_password']")).sendKeys(account.getPassword());
         selectCountry(account.getCountry());
-        clickSave();
+        //clickSave();
         selectCountryZone();
         element(By.cssSelector("input[name='password']")).sendKeys(account.getPassword());
         element(By.cssSelector("input[name='confirmed_password']")).sendKeys(account.getPassword());

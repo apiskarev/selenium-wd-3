@@ -31,4 +31,10 @@ public class AbstractPage {
     protected List<WebElement> elements(By by){
         return driver.findElements(by);
     }
+
+    protected void waitFor(int seconds){
+        try {
+            Thread.sleep(seconds * 1000);
+        }catch (Exception ignored){}
+    }
 }

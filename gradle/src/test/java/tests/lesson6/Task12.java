@@ -14,14 +14,13 @@ public class Task12 extends BaseTest {
 
     private AdminPage adminPage;
     private CatalogPage catalogPage;
-    private Product product;
     private NewProductPage newProductPage;
 
     @Before
     public void setUp(){
+        Product product = new Product();
         adminPage = new AdminPage(driver);
-        catalogPage = new CatalogPage(driver);
-        product = new Product();
+        catalogPage = new CatalogPage(driver, product);
         newProductPage = new NewProductPage(driver, product);
     }
 
@@ -34,7 +33,10 @@ public class Task12 extends BaseTest {
                 .fillGeneralSection()
                 .openTab(ProductTab.INFORMATION)
                 .fillInformationSection()
+                .openTab(ProductTab.PRICES)
+                .fillPricesSection()
                 .clickSaveButton();
+        catalogPage.assertProductAdded();
     }
 
 }
