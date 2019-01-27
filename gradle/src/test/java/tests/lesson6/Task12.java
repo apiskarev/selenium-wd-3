@@ -18,9 +18,9 @@ public class Task12 extends BaseTest {
 
     @Before
     public void setUp(){
-        adminPage = new AdminPage(driver);
-        catalogPage = new CatalogPage(driver);
         Product product = new Product();
+        adminPage = new AdminPage(driver);
+        catalogPage = new CatalogPage(driver, product);
         newProductPage = new NewProductPage(driver, product);
     }
 
