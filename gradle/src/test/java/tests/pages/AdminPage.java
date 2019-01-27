@@ -31,9 +31,8 @@ public class AdminPage extends AbstractPage {
     public void openMenuSection(AdminMenu menu){
         By menuSectionsLocator = By.cssSelector("li#app-");
         wait.until(ExpectedConditions.numberOfElementsToBe(menuSectionsLocator, 17));
-        List<WebElement> menuSections = driver.findElements(menuSectionsLocator);
-
         for (int i = 0; i < 17; i++){
+            List<WebElement> menuSections = driver.findElements(menuSectionsLocator);
             if (menuSections.get(i).getText().toLowerCase().equals(menu.name().toLowerCase())){
                 menuSections.get(i).findElement(By.cssSelector("a")).click();
             }

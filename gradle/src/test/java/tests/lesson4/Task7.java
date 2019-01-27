@@ -1,15 +1,24 @@
 package tests.lesson4;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import tests.BaseTest;
 import tests.pages.AdminPage;
 
-public class Task7 extends AdminPage {
+public class Task7 extends BaseTest {
+
+        private AdminPage adminPage;
+
+        @Before
+        public void setUp(){
+            adminPage = new AdminPage(driver);
+        }
 
         @Test
         public void adminMenuTest(){
-            loginAsAdmin();
+            adminPage.loginAsAdmin();
 
             By mainElements = By.cssSelector("ul#box-apps-menu > li");
             By subElements = By.cssSelector("ul#box-apps-menu ul.docs a");
