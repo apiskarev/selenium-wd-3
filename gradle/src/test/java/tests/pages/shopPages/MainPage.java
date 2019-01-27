@@ -34,4 +34,6 @@ public class MainPage extends AbstractPage {
     public void assertSuccess(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".notice.success")));
     }
+
+
 }

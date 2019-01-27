@@ -14,14 +14,13 @@ public class Task12 extends BaseTest {
 
     private AdminPage adminPage;
     private CatalogPage catalogPage;
-    private Product product;
     private NewProductPage newProductPage;
 
     @Before
     public void setUp(){
         adminPage = new AdminPage(driver);
         catalogPage = new CatalogPage(driver);
-        product = new Product();
+        Product product = new Product();
         newProductPage = new NewProductPage(driver, product);
     }
 

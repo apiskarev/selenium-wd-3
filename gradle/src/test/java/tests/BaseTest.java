@@ -50,11 +50,14 @@ public class BaseTest {
         return driver.findElements(by).size() > 0;
     }
 
-    protected WebElement element(By by){
-        return driver.findElement(by);
+    //protected WebElement element(By by){return driver.findElement(by);}
+
+    protected WebElement element(final By by){
+        return wait.until(driver -> driver.findElement(by));
     }
 
     protected List<WebElement> elements(By by){
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(by, 0));
         return driver.findElements(by);
     }
 
