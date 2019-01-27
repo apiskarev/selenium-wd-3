@@ -2,6 +2,7 @@ package tests.pages.shopPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import tests.pages.AbstractPage;
 import tests.pages.data.Account;
@@ -35,5 +36,8 @@ public class MainPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".notice.success")));
     }
 
-
+    public void clickProductNumber(int number){
+        WebElement product = element(By.xpath("(//img[@class='image'])["+ number +"]"));
+        product.click();
+    }
 }

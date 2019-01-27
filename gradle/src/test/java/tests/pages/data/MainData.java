@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-class MainData {
+public class MainData {
 
     Path resourcesImagesFolder = Paths.get("src", "main", "resources", "images");
 
@@ -14,7 +14,7 @@ class MainData {
         return r.nextBoolean();
     }
 
-    int getRandomNumber(int from, int to){
+    public int getRandomNumber(int from, int to){
         return ThreadLocalRandom.current().nextInt(from, to);
     }
 

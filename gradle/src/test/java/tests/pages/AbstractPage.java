@@ -1,6 +1,7 @@
 package tests.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +22,15 @@ public class AbstractPage {
 
     protected boolean areElementsPresent(By by){
         return driver.findElements(by).size() > 0;
+    }
+
+    protected boolean isElementPresent(By by){
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e){
+            return false;
+        }
     }
 
     protected WebElement element(By by){
