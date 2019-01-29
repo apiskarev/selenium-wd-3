@@ -40,4 +40,10 @@ public class MainPage extends AbstractPage {
         WebElement product = element(By.xpath("(//img[@class='image'])["+ number +"]"));
         product.click();
     }
+
+    public void openProductCart(){
+       By cartLink = By.cssSelector("#cart > a.link");
+       element(cartLink).click();
+    }
+
 }

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AbstractPage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     protected WebDriverWait wait;
 

@@ -87,7 +87,7 @@ public class Product extends MainData {
 
     private void setProductImagePath(){
         Path image = Paths.get(resourcesImagesFolder.toAbsolutePath().toString(), "baseproduct.png");
-        productImagePath = image.toAbsolutePath().toString();
+        productImagePath = image.toString();
     }
 
     public String getProductImagePath(){
