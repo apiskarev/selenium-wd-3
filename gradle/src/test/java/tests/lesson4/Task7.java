@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import tests.BaseTest;
-import tests.pages.AdminPage;
+import tests.pages.admin.AdminPage;
 
 public class Task7 extends BaseTest {
 

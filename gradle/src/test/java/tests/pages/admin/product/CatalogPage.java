@@ -1,4 +1,4 @@
-package tests.pages.admin;
+package tests.pages.admin.product;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

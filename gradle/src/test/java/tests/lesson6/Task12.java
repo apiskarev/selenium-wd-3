@@ -6,8 +6,8 @@ import tests.BaseTest;
 import tests.pages.admin.product.ProductTab;
 import tests.pages.data.Product;
 import tests.pages.data.enums.AdminMenu;
-import tests.pages.AdminPage;
-import tests.pages.admin.CatalogPage;
+import tests.pages.admin.AdminPage;
+import tests.pages.admin.product.CatalogPage;
 import tests.pages.admin.product.NewProductPage;
 
 public class Task12 extends BaseTest {

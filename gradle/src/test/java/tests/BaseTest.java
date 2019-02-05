@@ -63,7 +63,11 @@ public class BaseTest {
 
     @After
     public void stop(){
-        if (driver != null) {driver.quit(); driver = null;}
+        if (driver != null) {
+            driver.close();
+            driver.quit();
+            driver = null;
+        }
     }
 
 }

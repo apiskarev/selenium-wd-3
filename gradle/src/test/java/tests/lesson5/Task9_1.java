@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import tests.BaseTest;
-import tests.pages.AdminPage;
+import tests.pages.admin.AdminPage;
 
 import java.util.ArrayList;
 import java.util.Collections;

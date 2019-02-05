@@ -3,7 +3,7 @@ package tests.lesson2;
 import org.junit.Before;
 import org.junit.Test;
 import tests.BaseTest;
-import tests.pages.AdminPage;
+import tests.pages.admin.AdminPage;
 
 public class LoginAsAdmin extends BaseTest {
 
